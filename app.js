@@ -12,7 +12,11 @@ var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+
+//dung dung ejs, cui bap lam dung swig di
+//http://paularmstrong.github.io/swig/docs/
+app.engine('html', require('ejs').renderFile);
+app.set('view engine', 'html');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(__dirname + '/public/favicon.ico'));
@@ -56,5 +60,7 @@ app.use(function(err, req, res, next) {
     });
 });
 
+app.listen(8080);
+console.log('8080 is the magic port');
 
 module.exports = app;

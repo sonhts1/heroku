@@ -1,0 +1,7 @@
+.error {
+  border: solid 1px black;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  background-color: green;
+}
